@@ -1,0 +1,14 @@
+services:
+  zig-stateless-scanner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: zig-stateless-scanner
+    restart: unless-stopped
+    ports:
+      - "8035:8035"
+    environment:
+      - HINDSIGHT_PROMO_CODE=MEMHACK1019
+      - HINDSIGHT_API_KEY=hsk_50b425c99734390d6a9f74d59a7f5e78_021b3c05d1268660
+      - HINDSIGHT_API_URL=https://api.hindsight.vectorize.io/v1/default/banks/cybersecurity-assistant/reflect
+      - PORT=8035
